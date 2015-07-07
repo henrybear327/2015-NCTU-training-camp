@@ -4,6 +4,8 @@ array is pass-by-ref, checkout B
 
 clang-format E.c && astyle --style=linux E.c && clang -lm E.c -o E && ./E < input.txt 
 
+len = strlen!!!
+need to use (int)strlen
 
 #include <stdio.h>
 #include <stdlib.h>
