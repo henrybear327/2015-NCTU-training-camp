@@ -1,3 +1,5 @@
 7/7：Basic Enumeration
 
 array is pass-by-ref, checkout B
+
+clang-format E.c && astyle --style=linux E.c && clang -lm E.c -o E && ./E < input.txt 
