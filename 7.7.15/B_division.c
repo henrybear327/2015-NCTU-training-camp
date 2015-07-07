@@ -20,7 +20,7 @@ int cmp(const void *a, const void *b)
         return ((Answer *)a)->denominator - ((Answer *)b)->denominator;
 }
 
-Answer output[10000]; // 9 * 8 * 7 * 6 ot 10 * 9 * 8 * 7
+Answer output[100000]; // 9 * 8 * 7 * 6 * 5 ot 10 * 9 * 8 * 7 * 6
 int ans_index = 0;
 
 void dfs(int num, int level, Used_array used, int target)
@@ -64,10 +64,16 @@ void dfs(int num, int level, Used_array used, int target)
     }
 }
 
+int first = 0;
+
 int main()
 {
     int target;
     while (scanf("%d", &target) == 1 && target) {
+        if (first)
+            printf("\n");
+        else
+            first = 1;
         ans_index = 0;
         Used_array used;
         for (int i = 0; i < 10; i++)
@@ -83,7 +89,6 @@ int main()
             printf("%05d / %05d = %d\n", output[i].numerator, output[i].denominator,
                    target);
         }
-        printf("\n");
     }
 
     return 0;
