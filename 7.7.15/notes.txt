@@ -1,0 +1,3 @@
+7/7：Basic Enumeration
+
+array is pass-by-ref, checkout B
