@@ -9,6 +9,10 @@ int cmp(const void *a, const void *b)
     return *(int *)a - *(int *)b;
 }
 
+/*
+List all inequalities and then just solve for solution!
+*/
+
 int main()
 {
     int friend_boy, capacity;
