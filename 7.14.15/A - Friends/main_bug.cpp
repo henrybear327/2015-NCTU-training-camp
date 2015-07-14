@@ -33,37 +33,20 @@ int main()
                     }
                 } else if (data[a] < 0 && data[b] > 0) {
                     if (a != data[b]) {
-                        /* Wrong: 3 3, 1 3, 3 2, 2 3
-                        data[a] += data[data[b]];
+                        data[a] += data[b];
                         data[data[b]] = a;
                         int temp = data[b];
                         for (int j = 1; j <= citizen; j++)
                             if (data[j] == temp)
                                 data[j] = a;
-                        */
-                        if (data[b] < a) {
-                            data[data[b]] += data[a];
-                            data[a] = data[b];
-                            for (int j = 1; j <= citizen; j++)
-                                if (data[j] == a)
-                                    data[j] = data[b];
-                        } else {
-                            data[a] += data[data[b]];
-                            data[data[b]] = a;
-                            int temp = data[b];
-                            for (int j = 1; j <= citizen; j++)
-                                if (data[j] == temp)
-                                    data[j] = a;
-                        }
                     }
                 } else if (data[a] > 0 && data[b] < 0) {
-                    if (data[a] != b) {
-                        data[data[a]] += data[b];
-                        data[b] = data[a];
-                        for (int j = 1; j <= citizen; j++)
-                            if (data[j] == b)
-                                data[j] = data[a];
-                    }
+                    if(data[b] != a) {
+                    data[data[a]] += data[b];
+                    data[b] = data[a];
+                    for (int j = 1; j <= citizen; j++)
+                        if (data[j] == b)
+                            data[j] = data[a];}
                 } else {
                     if (data[a] != data[b]) {
                         data[data[a]] += data[data[b]];
@@ -74,16 +57,14 @@ int main()
                                 data[j] = data[a];
                     }
                 }
-
-                for (int i = 1; i <= citizen; i++)
-                    printf("%d ", data[i]);
-                printf("\n");
             }
+
             /*
             for (int i = 1; i <= citizen; i++)
                 printf("%d ", data[i]);
             printf("\n");
-            */
+                        */
+
             int ans = 1000000;
             for (int i = 1; i <= citizen; i++)
                 if (data[i] < ans)
