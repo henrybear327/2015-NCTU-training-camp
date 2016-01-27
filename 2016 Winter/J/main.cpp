@@ -4,14 +4,17 @@ using namespace std;
 typedef long long ll;
 
 ll fast_pow(ll x, ll n, ll M) {
+    /*
+    https://henrybear327.gitbooks.io/gitbook_tutorial/content/Algorithm/fast_pow/index.html
+    */
     ll result = 1;
     ll base = x;
 
-    while (n != 0) { // 從尾端一個一個拆解出位元
+    while (n != 0) { 
         if (n & 1)
             result = result * base % M;
         base = base * base % M;
-        n >>= 1LL; // 即 n /= 2
+        n >>= 1LL; 
     }
 
     return result;
