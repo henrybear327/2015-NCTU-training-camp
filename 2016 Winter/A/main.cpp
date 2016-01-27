@@ -3,6 +3,9 @@ using namespace std;
 
 typedef long long ll;
 // http://kuoe0.logdown.com/posts/2011/05/01/poj-2231-moo-volume
+
+// A complete rewrite after reading the source code from the above website
+
 int main()
 {
     int ncase;
